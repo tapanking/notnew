@@ -1,0 +1,190 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #ffb6c1, #ff8da1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    color: #333;
+    position: relative;
+    text-align: center;
+  }
+  
+  /* Background Hearts and Flowers */
+  body::before {
+    content: "";
+    position: absolute;
+    top: -10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200%;
+    height: 200%;
+    background: url('https://cdn.pixabay.com/photo/2017/08/30/21/12/flowers-2695569_960_720.png') no-repeat center center;
+    background-size: 200%;
+    animation: float 10s ease-in-out infinite;
+    opacity: 0.5;
+  }
+  
+  @keyframes float {
+    0% {
+      transform: translateX(-50%) translateY(0);
+    }
+    50% {
+      transform: translateX(-50%) translateY(20px);
+    }
+    100% {
+      transform: translateX(-50%) translateY(0);
+    }
+  }
+  
+  /* Main Container Styling */
+  .container {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    padding: 30px 40px;
+    width: 350px;
+    position: relative;
+    z-index: 10;
+  }
+  
+  /* Main Invitation Styling */
+  .invitation {
+    display: block;
+  }
+  
+  .second-chance, .thank-you {
+    display: none;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    color: #e03e6b;
+    margin-bottom: 15px;
+  }
+  
+  p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 20px;
+  }
+  
+  /* Heart Button Animation */
+  .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .btn {
+    padding: 10px 20px;
+    background-color: #ff7e8b;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    position: relative;
+  }
+  
+  .btn:hover {
+    background-color: #ff5275;
+    transform: scale(1.1);
+  }
+  
+  /* Button Hover Animation for Hearts */
+  .btn::before {
+    content: "❤️";
+    position: absolute;
+    top: 50%;
+    left: -25px;
+    transform: translateY(-50%) scale(0);
+    animation: heart-bounce 0.6s ease-in-out forwards;
+  }
+  
+  @keyframes heart-bounce {
+    0% {
+      transform: translateY(-50%) scale(0);
+    }
+    50% {
+      transform: translateY(-150%) scale(1.5);
+    }
+    100% {
+      transform: translateY(-50%) scale(1);
+    }
+  }
+  
+  /* Second Chance Styling */
+  .second-chance {
+    text-align: center;
+    font-size: 1.1rem;
+  }
+  
+  .second-chance h1 {
+    font-size: 2rem;
+    color: #ffb3c1;
+  }
+  
+  .second-chance p {
+    font-size: 1.2rem;
+    color: #555;
+  }
+  
+  /* Thank You Styling */
+  .thank-you {
+    text-align: center;
+    background-color: #a3f4d4;
+    border-radius: 10px;
+    padding: 20px;
+  }
+  
+  .thank-you h1 {
+    color: #2d9724;
+  }
+  
+  .thank-you p {
+    font-size: 1.3rem;
+    color: #444;
+  }
+  
+  .thank-you .btn {
+    background-color: #2d9724;
+    border-radius: 25px;
+  }
+  
+  .thank-you .btn:hover {
+    background-color: #1a6c1b;
+  }
+  
+  /* Floating hearts in background */
+  body::after {
+    content: "❤️";
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    font-size: 30px;
+    animation: float-heart 5s ease-in-out infinite;
+    opacity: 0.7;
+  }
+  
+  @keyframes float-heart {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(20px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
